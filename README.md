@@ -1,25 +1,15 @@
-Ionic App Base
-=====================
+## 1. Traveler——一款旅游分享软件
+1. 类似于高德地图的导航搜索功能
+2. 在搜索出的界面上添加语音解说功能，有官方的，也有以前的游客留下的对这个景点的评论（评论的排序可以根据点赞的次数多少排序，包括选择自动播放和点击播放全部或特定解说两种模式），自己也可以上传，需要审核
+3. 跟随讲解，可以根据游客当前的定位和朝向，行走速度等信息播放官方的解说语音，相当于一个电子导游
+4. 打开相机界面拍照，显示游客评论弹幕，弹幕位置根据相机的朝向（现在弹幕很流行，技术上这算AR，以前有个创意就是根据相机朝向显示这个朝向上的景点）
+5. 拍照完毕可以支持分享，来到同一个地点的游客可以查看别的游客分享的照片文字，就是一个评论功能，但包括照片的，网易云音乐就因为评论功能颇受欢迎
+6. 一些需要大量编辑的功能，游客可以上传游玩攻略和游玩日记等
+7. 支持私信？可以后续开发
+8. 根据游客游玩历史推荐景点？
+9. 景点打分，需要确认是否去过该景点，并审核
+10. 后期可以支持专业人士的拍照摄影展览
 
-A starting project for Ionic that optionally supports using custom SCSS.
-
-## Using this project
-
-We recommend using the [Ionic CLI](https://github.com/driftyco/ionic-cli) to create new Ionic projects that are based on this project but use a ready-made starter template.
-
-For example, to start a new Ionic project with the default tabs interface, make sure the `ionic` utility is installed:
-
-```bash
-$ npm install -g ionic
-```
-
-Then run: 
-
-```bash
-$ ionic start myProject tabs
-```
-
-More info on this can be found on the Ionic [Getting Started](http://ionicframework.com/getting-started) page and the [Ionic CLI](https://github.com/driftyco/ionic-cli) repo.
-
-## Issues
-Issues have been disabled on this repo, if you do find an issue or have a question consider posting it on the [Ionic Forum](http://forum.ionicframework.com/).  Or else if there is truly an error, follow our guidelines for [submitting an issue](http://ionicframework.com/submit-issue/) to the main Ionic repository.
+## 2. 开发配置
+1. 使用ionic框架
+2. IDE：webstorm
