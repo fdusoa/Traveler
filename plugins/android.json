@@ -4,20 +4,21 @@
         "uninstalled": []
     },
     "config_munge": {
-        "files": {
-            "res/xml/config.xml": {
-                "parents": {
-                    "/*": []
-                }
-            },
-            "AndroidManifest.xml": {
-                "parents": {
-                    "/manifest": [],
-                    "/manifest/application": []
-                }
-            }
-        }
+        "files": {}
     },
     "installed_plugins": {},
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "com.mbppower.camerapreview": {
+            "PACKAGE_NAME": "com.ionicframework.traveler"
+        },
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.ionicframework.traveler"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.ionicframework.traveler"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "com.ionicframework.traveler"
+        }
+    }
 }
