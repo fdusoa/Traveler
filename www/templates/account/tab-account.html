@@ -1,33 +1,48 @@
-<ion-view view-title="Account">
+<ion-view>
   <ion-content>
-    <ion-content>
-      <ion-list>
-        <div class="item item-avatar">
-          <img src="img/mike.png">
-          <h2>N4A</h2>
-          <p>I'm a programmer</p>
-        </div>
-
-        <div class="row">
-          <div class="col"><i class="ion-grid"></i></div>
-          <div class="col"><i class="ion-happy"></i></div>
-          <div class="col"><i class="ion-location"></i></div>
-          <div class="col"><i class="ion-home"></i></div>
-        </div>
-      </ion-list>
-      <div>
-        <div class="row">
-          <div class="col"><img height="80px" src="img/adam.jpg" /></div>
-          <div class="col"><img height="80px" src="img/adam.jpg" /></div>
-          <div class="col"><img height="80px" src="img/adam.jpg" /></div>
-          <div class="col"><img height="80px" src="img/adam.jpg" /></div>
-        </div>
-        <div class="row">
-          <div class="col"><img height="80px" src="img/adam.jpg" /></div>
-          <div class="col"><img height="80px" src="img/adam.jpg" /></div>
-          <div class="col"><img height="80px" src="img/adam.jpg" /></div>
-          <div class="col"><img height="80px" src="img/adam.jpg" /></div>
+      <!--<ion-list>-->
+        <!--<div class="item item-avatar">-->
+          <!--<img src="img/mike.png">-->
+          <!--<h2>N4A</h2>-->
+          <!--<p>I'm a programmer</p>-->
+        <!--</div>-->
+      <!--</ion-list>-->
+    <div class="border-bottom">
+      <div class="row">
+        <a class="col-20 item-avatar" href="#">
+          <img src="img/adam.jpg">
+        </a>
+        <div class="col-80 font-size-small padding-top text-center">
+          <div class="row">
+            <div class="col-25"><div>5</div>Photos</div>
+            <div class="col-25"><div>15</div>Blogs</div>
+            <div class="col-25"><div>25</div>Followers</div>
+            <div class="col-25"><div>35</div>Followings</div>
+          </div>
         </div>
       </div>
+
+    </div>
+      <div class="row tabs-icon-bottom">
+        <a class="tab-item" href="#tab/account/grid">
+          <i class="icon ion-grid"></i>
+          Photos
+        </a>
+        <a class="tab-item" href="#tab/account/blog">
+          <i class="icon ion-ios-paper-outline"></i>
+          Blog
+        </a>
+        <a class="tab-item" href="#tab/account/location">
+          <i class="icon ion-location"></i>
+          Location
+        </a>
+        <a class ="tab-item" href="#tab/account/favorites">
+          <i class="icon ion-android-favorite"></i>
+          Favorites
+        </a>
+      </div>
+      <ion-nav-view name="account-content">
+
+      </ion-nav-view>
   </ion-content>
 </ion-view>

@@ -1,7 +1,7 @@
 /**
  * Created by duocai on 2016/9/6.
  */
-angular.module('starter.routers', [])
+angular.module('starter.routers', ['routers.account'])
 
   .config(function($stateProvider, $urlRouterProvider) {
 
@@ -70,6 +70,7 @@ angular.module('starter.routers', [])
 
       .state('tab.account', {
         url: '/account',
+        abstract: true,
         views: {
           'tab-account': {
             templateUrl: 'templates/account/tab-account.html',
