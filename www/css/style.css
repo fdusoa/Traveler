@@ -6,3 +6,12 @@
   margin:0;
   font-family:"微软雅黑";
 }
+.font-size-small {
+  font-size: smaller;
+}
+.font-size-large {
+  font-size: larger;
+}
+.border-bottom {
+  border-bottom: thin solid darkgray;
+}
