@@ -77,7 +77,17 @@ angular.module('starter.routers', ['routers.account'])
             controller: 'AccountCtrl'
           }
         }
-      });
+      })
+      .state('tab.blogs-detail',{
+        url:'/blogs/:blogId',
+        views:{
+          'tab-account':{
+            templateUrl:'templates/account/blog-detail.html',
+            controller:'BlogDetailCtrl'
+          }
+        }
+      })
+    ;
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/tab/dash');

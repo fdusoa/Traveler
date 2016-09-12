@@ -15,3 +15,6 @@
 .border-bottom {
   border-bottom: thin solid darkgray;
 }
+.padding-small{
+  padding: 1px;
+}

@@ -1,6 +1,9 @@
 <ion-view view-title="Photos">
   <ion-content>
-    {{test}}
-    1234
+    <div ng-repeat="view in photosView" class="row">
+      <div ng-repeat="photo in view" class="col-33 item-image padding-small">
+        <img src="{{photo.path}}"/>
+      </div>
+    </div>
   </ion-content>
 </ion-view>
