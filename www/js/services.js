@@ -1,4 +1,4 @@
-angular.module('starter.services', ['service.myPhotos','service.myBlogs'])
+angular.module('starter.services', ['service.myPhotos','service.myBlogs','service.Trends'])
 
 .factory('Notes', function() {
   // Might use a resource here that returns a JSON array

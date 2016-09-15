@@ -6,6 +6,9 @@
   margin:0;
   font-family:"微软雅黑";
 }
+.neg-padding-top-10{
+  padding-top: -10px;
+}
 .font-size-small {
   font-size: smaller;
 }
@@ -17,4 +20,7 @@
 }
 .padding-small{
   padding: 1px;
+}
+.float-right {
+  float: right;
 }

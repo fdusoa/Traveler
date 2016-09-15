@@ -3,6 +3,13 @@
  */
 angular.module('ctrl.dash', [])
 
-  .controller('DashCtrl', function($scope) {
+  .controller('DashCtrl', function($scope,$ionicSlideBoxDelegate,$timeout,Trends) {
+    $ionicSlideBoxDelegate.update();
+    $scope.trends = Trends.all();
 
+    $scope.doRefresh = function() {
+      $timeout(function(){
+        $scope.$broadcast('scroll.refreshComplete');
+      },1000)
+    };
   });
