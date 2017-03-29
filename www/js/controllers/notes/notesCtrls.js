@@ -11,10 +11,22 @@ angular.module('ctrl.notes', [])
     //
     //$scope.$on('$ionicView.enter', function(e) {
     //});
-
-    $scope.notes = Notes.all();
+    $scope.notes = Notes.promote();
     $scope.remove = function(note) {
       Notes.remove(note);
+    };
+
+    $scope.choosePromote = "positive";
+    $scope.chooseAll = "clear";
+
+    $scope.getPromote = function() {
+      $scope.notes = Notes.all();
+    };
+    $scope.getAll = function() {
+      $scope.notes = Notes.promote();
+    };
+    $scope.newNote = function() {
+      alert('new note');
     };
   })
 

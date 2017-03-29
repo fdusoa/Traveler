@@ -32,6 +32,12 @@ angular.module('starter.services', ['service.myPhotos','service.myBlogs','servic
   }];
 
   return {
+    promote: function() {
+      var promote = [];
+      promote.push(notes[3]);
+      promote.push(notes[2]);
+      return promote;
+    },
     all: function() {
       return notes;
     },

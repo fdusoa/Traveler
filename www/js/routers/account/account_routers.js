@@ -1,12 +1,9 @@
 /**
- * Created by alex on 16/9/10.
- */
-/**
  * Created by duocai on 2016/9/6.
  */
 angular.module('routers.account', [])
 
-  .config(function($stateProvider, $urlRouterProvider) {
+  .config(function($stateProvider) {
 
     // Ionic uses AngularUI Router which uses the concept of states
     // Learn more here: https://github.com/angular-ui/ui-router
@@ -31,6 +28,15 @@ angular.module('routers.account', [])
           }
         }
       })
+      .state('tab.blogs-detail',{
+        url:'/blogs/:blogId',
+        views:{
+          'tab-account':{
+            templateUrl:'templates/account/blog-detail.html',
+            controller:'BlogDetailCtrl'
+          }
+        }
+      })
       .state("tab.account.location",{
         url:"/location",
         views:{
@@ -50,8 +56,4 @@ angular.module('routers.account', [])
         }
       })
     ;
-
-    // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/tab/dash');
-
   });

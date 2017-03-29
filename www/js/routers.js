@@ -1,7 +1,7 @@
 /**
  * Created by duocai on 2016/9/6.
  */
-angular.module('starter.routers', ['routers.account'])
+angular.module('starter.routers', ['routers.account', 'routers.note'])
 
   .config(function($stateProvider, $urlRouterProvider) {
 
@@ -51,19 +51,11 @@ angular.module('starter.routers', ['routers.account'])
 
       .state('tab.notes', {
         url: '/notes',
+        //abstract: true,
         views: {
           'tab-notes': {
             templateUrl: 'templates/notes/tab-notes.html',
             controller: 'NotesCtrl'
-          }
-        }
-      })
-      .state('tab.note-detail', {
-        url: '/notes/:noteId',
-        views: {
-          'tab-notes': {
-            templateUrl: 'templates/notes/note-detail.html',
-            controller: 'NoteDetailCtrl'
           }
         }
       })
@@ -75,15 +67,6 @@ angular.module('starter.routers', ['routers.account'])
           'tab-account': {
             templateUrl: 'templates/account/tab-account.html',
             controller: 'AccountCtrl'
-          }
-        }
-      })
-      .state('tab.blogs-detail',{
-        url:'/blogs/:blogId',
-        views:{
-          'tab-account':{
-            templateUrl:'templates/account/blog-detail.html',
-            controller:'BlogDetailCtrl'
           }
         }
       })
