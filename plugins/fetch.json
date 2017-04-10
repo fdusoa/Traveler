@@ -1,0 +1,10 @@
+{
+    "org.cordova.HelloPlugin": {
+        "source": {
+            "type": "local",
+            "path": "HelloPlugin"
+        },
+        "is_top_level": true,
+        "variables": {}
+    }
+}

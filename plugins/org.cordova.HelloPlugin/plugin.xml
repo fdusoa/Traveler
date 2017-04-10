@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin id="org.cordova.HelloPlugin" version="0.0.1"
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+  <name>HelloPlugin</name>
+  <description>Description</description>
+  <js-module name="HelloPlugin" src="www/HelloPlugin.js">
+    <clobbers target="HelloPlugin"/>
+  </js-module>
+  <platform name="android">
+    <config-file parent="/*" target="res/xml/config.xml">
+      <!--新增配置文件 name="HelloPlugin"指定了js端调用时需要传递的名称参数-->
+      <feature name="HelloPlugin">
+        <!--value的值为刚刚开发的HelloPlugin文件的路径-->
+        <param name="android-package" value="org.apache.cordova.hello.HelloPlugin" />
+      </feature>
+    </config-file>
+    <source-file src="src/android/HelloPlugin.java" target-dir="src/org/apache/cordova/hello"/>
+  </platform>
+</plugin>
