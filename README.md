@@ -36,4 +36,5 @@
 1. 每个开发人员请先新建自己的分支然后进行开发，在请求merge到dev分支
 2. [ionic教程](http://www.runoob.com/ionic/ionic-tutorial.html) && [ionic css参考网站](http://ionicframework.com/docs/components/) && [ionic service和指令（标签）参考](http://ionicframework.com/docs/api/service/$ionicActionSheet/)
 3. [angularJs教程1](http://www.runoob.com/angularjs/angularjs-tutorial.html) && [angularJs教程2](http://www.imooc.com/learn/156/) && [angularJs API referrence](http://docs.ngnice.com/api)
+4. 插件编写教程[docs/create plugin](docs/create plugin)
 
