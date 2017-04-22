@@ -1,5 +1,11 @@
 <ion-view view-title="Map">
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=pSY6ZqLs3gFaTmt02WU5GTWG"></script>
   <ion-content>
+    <ion-refresher
+      pulling-text="Pull to refresh..."
+      on-refresh="refreshMap()">
+    </ion-refresher>
+    <div ng-click="refreshMap()">Click Me To Refresh</div>
     <div id="allmap"></div>
   </ion-content>
 </ion-view>
