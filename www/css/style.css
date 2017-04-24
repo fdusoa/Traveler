@@ -6,6 +6,23 @@
   margin:0;
   font-family:"微软雅黑";
 }
+body, html
+{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;margin:0;
+  font-family:"微软雅黑";
+}
+#panorama
+{
+  height: 50%;
+  overflow: hidden;
+}
+#normal_map
+{
+  height:50%;
+  overflow: hidden;
+}
 .neg-padding-top-10{
   padding-top: -10px;
 }

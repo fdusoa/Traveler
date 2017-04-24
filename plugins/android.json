@@ -8,7 +8,7 @@
     },
     "installed_plugins": {
         "org.cordova.HelloPlugin": {
-            "PACKAGE_NAME": "com.ionicframework.starter"
+            "PACKAGE_NAME": "com.fduss.clover"
         }
     },
     "dependent_plugins": {}

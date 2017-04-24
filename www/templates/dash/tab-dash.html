@@ -5,10 +5,10 @@
       on-refresh="doRefresh()">
     </ion-refresher>
     <ion-list class="card">
-      <ion-item ng-repeat="trend in trends" class="item-image full-image item-body">
+      <ion-item href="#tab/panorama/1" ng-repeat="trend in trends" class="item-image full-image item-body">
         <h3 class="icon text-left"><i class="ion-social-google"></i> {{trend.title}}</h3>
         <ion-slide-box on-slide-changed="slideHasChanged($index)">
-          <ion-slide ng-repeat="image in trend.images" >
+          <ion-slide ng-repeat="image in trend.images">
             <div class="box yellow">
               <img src="{{image.path}}" />
             </div>

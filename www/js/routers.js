@@ -1,7 +1,7 @@
 /**
  * Created by duocai on 2016/9/6.
  */
-angular.module('starter.routers', ['routers.account', 'routers.note'])
+angular.module('starter.routers', ['routers.account', 'routers.note','routers.dash'])
 
   .config(function($stateProvider, $urlRouterProvider) {
 
