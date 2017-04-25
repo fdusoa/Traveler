@@ -7,8 +7,11 @@
         "files": {}
     },
     "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.fduss.traveler"
+        },
         "org.cordova.HelloPlugin": {
-            "PACKAGE_NAME": "com.fduss.clover"
+            "PACKAGE_NAME": "com.fduss.traveler"
         }
     },
     "dependent_plugins": {}
