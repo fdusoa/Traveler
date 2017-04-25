@@ -3,8 +3,14 @@
  */
 angular.module('ctrl.account', [])
 
-  .controller('AccountCtrl', function($scope) {
+  .controller('AccountCtrl', function($scope, User) {
 
+    $scope.ume = "";
+    $scope.pwd = "";
+
+    $scope.login = function () {
+      User.login($scope.ume, $scope.pwd);
+    }
   })
   .controller( 'AccountGridCtrl', function ($scope,MyPhotos) {
       // $scope.test="Grid";

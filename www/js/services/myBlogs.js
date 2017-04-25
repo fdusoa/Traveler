@@ -1,9 +1,6 @@
 /**
  * Created by alex on 16/9/12.
  */
-/**
- * Created by alex on 16/9/12.
- */
 angular.module('service.myBlogs', [])
 
   .factory('MyBlogs', function() {
