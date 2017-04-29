@@ -1,6 +1,6 @@
-<ion-view view-title="panorama">
+<ion-view view-title="{{pano.title}}">
   <ion-content>
-    <div id="panorama"></div>
-    <div id="normal_map"></div>
+    <iframe width="100%" height="100%"
+            ng-src="{{trustSrc()}}"></iframe>
   </ion-content>
 </ion-view>

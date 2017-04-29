@@ -8,7 +8,8 @@ angular.module('service.Trends', [])
 
     // Some fake testing data
     var trends = [{
-      title: 'beautiful mountains',
+      title: '延安宝塔风景区',
+      url: 'http://www.360vrpano.com/index.php/Project/viewProject/id/8394.html',
       images: [
         {
           path: 'img/photos/pic0.jpg'
@@ -24,7 +25,8 @@ angular.module('service.Trends', [])
       comments:5
     },
     {
-      title: 'beautiful lakes',
+      title: '百度地图全景',
+      url: 'templates/dash/baidu_panorama.html',
       images: [
         {
           path:'img/photos/pic4.jpg'
@@ -40,7 +42,8 @@ angular.module('service.Trends', [])
       comments: 25
     },
     {
-      title: 'beautiful grasses',
+      title: '五龙山石夫人',
+      url: 'http://www.360vrpano.com/index.php/Project/viewProject/id/8647.html',
       images:[
         {
           path:'img/photos/pic8.jpg'

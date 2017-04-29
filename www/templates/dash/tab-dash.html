@@ -5,20 +5,22 @@
       on-refresh="doRefresh()">
     </ion-refresher>
     <ion-list class="card">
-      <ion-item href="#tab/panorama/1" ng-repeat="trend in trends" class="item-image full-image item-body">
-        <h3 class="icon text-left"><i class="ion-social-google"></i> {{trend.title}}</h3>
-        <ion-slide-box on-slide-changed="slideHasChanged($index)">
-          <ion-slide ng-repeat="image in trend.images">
-            <div class="box yellow">
-              <img src="{{image.path}}" />
-            </div>
-          </ion-slide>
-        </ion-slide-box>
-        <p class="text-left icon-right">
-          <a href="#" class="subdued">{{trend.likes}} Like</a>
-          <a href="#" class="subdued">{{trend.comments}} Comments</a>
-          <a class="icon  float-right"><i class="ion-thumbsup"></i></a>
-        </p>
+      <ion-item ng-repeat="trend in trends" class="item-image full-image item-body">
+        <div ng-click="show($index)">
+          <h3 class="icon text-left"><i class="ion-social-google"></i> {{trend.title}}</h3>
+          <ion-slide-box on-slide-changed="slideHasChanged($index)">
+            <ion-slide ng-repeat="image in trend.images">
+              <div class="box yellow">
+                <img src="{{image.path}}" />
+              </div>
+            </ion-slide>
+          </ion-slide-box>
+          <p class="text-left icon-right">
+            <a href="#" class="subdued">{{trend.likes}} Like</a>
+            <a href="#" class="subdued">{{trend.comments}} Comments</a>
+            <a class="icon  float-right"><i class="ion-thumbsup"></i></a>
+          </p>
+        </div>
       </ion-item>
     </ion-list>
   </ion-content>
