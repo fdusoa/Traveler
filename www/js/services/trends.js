@@ -23,42 +23,55 @@ angular.module('service.Trends', [])
       ],
       likes: 3,
       comments:5
-    },
-    {
-      title: '百度地图全景',
-      url: 'templates/dash/baidu_panorama.html',
-      images: [
-        {
-          path:'img/photos/pic4.jpg'
-        }, {
-          path:'img/photos/pic5.jpg'
-        }, {
-          path:'img/photos/pic6.jpg'
-        }, {
-          path:'img/photos/pic7.jpg'
-        }
-      ],
-      likes: 23,
-      comments: 25
-    },
-    {
-      title: '五龙山石夫人',
-      url: 'http://www.360vrpano.com/index.php/Project/viewProject/id/8647.html',
-      images:[
-        {
-          path:'img/photos/pic8.jpg'
-        },
-        {
-          path:'img/photos/pic5.jpg'
-        }, {
-          path:'img/photos/pic6.jpg'
-        }, {
-          path:'img/photos/pic7.jpg'
-        }
-      ],
-      likes:23,
-      comments:34
-    }
+      },
+      {
+        title: '复旦大学张江校区',
+        url: 'templates/dash/baidu_panorama.html',
+        images: [
+          {
+            path:'img/photos/pic4.jpg'
+          }, {
+            path:'img/photos/pic5.jpg'
+          }, {
+            path:'img/photos/pic6.jpg'
+          }, {
+            path:'img/photos/pic7.jpg'
+          }
+        ],
+        likes: 23,
+        comments: 25
+      },
+      {
+        title: '五龙山石夫人',
+        url: 'http://www.360vrpano.com/index.php/Project/viewProject/id/8647.html',
+        images:[
+          {
+            path:'img/photos/pic8.jpg'
+          },
+          {
+            path:'img/photos/pic5.jpg'
+          }, {
+            path:'img/photos/pic6.jpg'
+          }, {
+            path:'img/photos/pic7.jpg'
+          }
+        ],
+        likes:23,
+        comments:34
+      },
+      {
+        title: '某某房',
+        url: 'http://www.360vrpano.com/index.php/Project/viewProject/id/9176.html',
+        images:[
+          {
+            path:'img/photos/pic6.jpg'
+          }, {
+            path:'img/photos/pic7.jpg'
+          }
+        ],
+        likes:23,
+        comments:34
+      }
     ];
     return {
       all: function() {

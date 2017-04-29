@@ -180,27 +180,27 @@ cordova platform add android
 
 ### 3.2 各个文件内容
 
-1.  HelloPlugin.java就是上面的文件直接拷贝过来即可
+1.    HelloPlugin.java就是上面的文件直接拷贝过来即可
 
-2.  plugin.xml:
+2.    plugin.xml:
 
-    ```xml
-    <?xml version="1.0" encoding="utf-8"?>
-    <plugin id="org.cordova.HelloPlugin" version="0.0.1"
-            xmlns="http://apache.org/cordova/ns/plugins/1.0"
-            xmlns:android="http://schemas.android.com/apk/res/android">
-      <name>HelloPlugin</name>
-      <description>Description</description>
+      ```xml
+       <?xml version="1.0" encoding="utf-8"?>
+       <plugin id="org.cordova.HelloPlugin" version="0.0.1"
+               xmlns="http://apache.org/cordova/ns/plugins/1.0"
+               xmlns:android="http://schemas.android.com/apk/res/android">
+         <name>HelloPlugin</name>
+         <description>Description</description>
 
-      <!-- js 部分 -->
-      <!-- plugin 'org.cordova.HelloPlugin'(看上面id) 下 定义module HelloPlugin -->
-      <!-- 配置后会将HelloPlugin.js配置到android项目assets/www/plugins 目录下，做了语法补充完整，
-    	有兴趣可以自己打开看看 -->
-      <js-module name="HelloPlugin" src="www/HelloPlugin.js">
-        <clobbers target="HelloPlugin"/>
-      </js-module>
+         <!-- js 部分 -->
+         <!-- plugin 'org.cordova.HelloPlugin'(看上面id) 下 定义module HelloPlugin -->
+         <!-- 配置后会将HelloPlugin.js配置到android项目assets/www/plugins 目录下，做了语法补充完整，
+       	有兴趣可以自己打开看看 -->
+         <js-module name="HelloPlugin" src="www/HelloPlugin.js">
+           <clobbers target="HelloPlugin"/>
+         </js-module>
 
-      <!--android 部分就是
+         <!--android 部分就是
       1. 在第2部分提到的res/xml/config.xml添加plugin配置
       2. 将对应的文件拷贝到对应的目录下-->
       <platform name="android">
@@ -213,15 +213,16 @@ cordova platform add android
         </config-file>
         <source-file src="src/android/HelloPlugin.java" target-dir="src/org/apache/cordova/hello"/>
       </platform>
+      ```
     </plugin>
-    ```
+    ​```
 
 
 3.  HelloPlugin.js
 
     ```java
     /**
-    * Created by admin on 2017/4/10.
+    * Created by duocai on 2017/4/10.
     */
     var exec = require('cordova/exec');
 
@@ -239,7 +240,7 @@ cordova platform add android
 4.  调用插件，依然以前面的CameraCtrl为例
 
     ```javascript
-      /**
+       /**
     * Created by duocai on 2016/4/10.
     */
     angular.module('ctrl.camera', [])
