@@ -57,15 +57,22 @@ angular.module('ctrl.account', [])
     };
   })
 
-  .controller('LoginCtrl', function ($scope,$rootScope,$ionicPopup,$state,$http) {
+  .controller('LoginCtrl', function ($scope,$rootScope,$ionicPopup,$state,User) {
+    $scope.user = {
+      username: "",
+      password: ""
+    };
     $scope.checkLogin = function (account, password) {
-      if(account == '' || account == null || password == '' || password == null){
+      if(account === '' || account === null || password === '' || password === null){
         $ionicPopup.alert({
           title:'系统提示',
           template: '用户名和密码不能为空!'
         });
       }
-      else if(account == 'admin' && password == 'admin'){
+      else {
+        User.login({})
+      }
+      if(account === 'admin' && password === 'admin'){
         $state.go('tab.dash');
       }
       else{
@@ -74,13 +81,6 @@ angular.module('ctrl.account', [])
           template: '登录失败,密码错误'
         });
       }
-      // $http.get("")
-      //   .success(function (response) {
-      //
-      //   })
-      //   .error(function () {
-      //
-      //   })
     }
   })
   .controller('RegisterCtrl', function ($scope, $ionicPopup, $state, $http) {
