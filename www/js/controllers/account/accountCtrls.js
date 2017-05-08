@@ -41,7 +41,7 @@ angular.module('ctrl.account', [])
   .controller('BlogDetailCtrl', function ($scope,$stateParams,MyBlogs) {
     $scope.blog = MyBlogs.get($stateParams.blogId);
   })
-  .controller('AccountInfoCtrl', function ($scope, $ionicPopup, $state) {
+  .controller('AccountInfoCtrl', function ($scope, $ionicPopup) {
     $scope.showConfirm = function() {
       var confirmPopup = $ionicPopup.confirm({
         title: '退出后不会删除任何历史数据,下次登录依然可以使用本账号。',
@@ -49,43 +49,42 @@ angular.module('ctrl.account', [])
       });
       confirmPopup.then(function(res) {
         if(res) {
-          $state.go('tab.login')
+          console.log('You are sure');
+        } else {
+          console.log('You are not sure');
         }
       });
     };
   })
 
-  .controller('NameInfoCtrl', function ($scope, $ionicPopup) {
-    $ionicPopup.alert({
-      title:'系统提示',
-      template: 'Hello!'
-    });
-  })
-
-  .controller('LoginCtrl', function ($scope,$rootScope,$ionicPopup,$state,$http) {
-    $scope.checkLogin = function (account, password) {
-      if(account == '' || account == null || password == '' || password == null){
+  .controller('LoginCtrl', function ($scope,$rootScope,$ionicPopup,$state,User) {
+    $scope.user = {
+      username: "",
+      password: ""
+    };
+    $scope.checkLogin = function () {
+      var account = $scope.user.username;
+      var password = $scope.user.password;
+      if(account === '' || account === null || password === '' || password === null){
         $ionicPopup.alert({
           title:'系统提示',
           template: '用户名和密码不能为空!'
         });
       }
-      else if(account == 'admin' && password == 'admin'){
-        $state.go('tab.account.grid');
-      }
-      else{
-        $ionicPopup.alert({
-          title: '系统提示',
-          template: '登录失败,密码错误'
+      else {
+        User.login($scope.user).then(function () {
+          $ionicPopup.alert({
+            title:'系统提示',
+            template: 'chen'
+          });
+        }, function () {
+          $ionicPopup.alert({
+            title:'系统提示',
+            template: 'shibai!'
+          });
         });
+
       }
-      // $http.get("")
-      //   .success(function (response) {
-      //
-      //   })
-      //   .error(function () {
-      //
-      //   })
     }
   })
   .controller('RegisterCtrl', function ($scope, $ionicPopup, $state, $http) {

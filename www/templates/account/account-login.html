@@ -5,14 +5,14 @@
       <label class="item item-input">
         <!--<span class="input-label">用户名: </span>-->
         <i class="icon ion-person"></i>
-        <input type="text" autofocus required ng-model="account" placeholder="请输入用户名">
+        <input type="text" autofocus required ng-model="user.username" placeholder="请输入用户名">
       </label>
       <label class="item item-input">
         <!--<span class="input-label">密码: </span>-->
         <i class="icon ion-key"></i>
-        <input type="password" required ng-model="password" placeholder="请输入密码">
+        <input type="password" required ng-model="user.password" placeholder="请输入密码">
       </label>
-      <button class="button button-block button-positive" ng-click="checkLogin(account,password)">
+      <button class="button button-block button-positive" ng-click="checkLogin()">
         登录
       </button>
         <a class="button button-block button-calm" href="#/tab/register">注册</a>
