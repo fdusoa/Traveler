@@ -41,7 +41,7 @@ angular.module('ctrl.account', [])
   .controller('BlogDetailCtrl', function ($scope,$stateParams,MyBlogs) {
     $scope.blog = MyBlogs.get($stateParams.blogId);
   })
-  .controller('AccountInfoCtrl', function ($scope, $ionicPopup) {
+  .controller('AccountInfoCtrl', function ($scope, $ionicPopup, $state) {
     $scope.showConfirm = function() {
       var confirmPopup = $ionicPopup.confirm({
         title: '退出后不会删除任何历史数据,下次登录依然可以使用本账号。',
@@ -49,12 +49,17 @@ angular.module('ctrl.account', [])
       });
       confirmPopup.then(function(res) {
         if(res) {
-          console.log('You are sure');
-        } else {
-          console.log('You are not sure');
+          $state.go('tab.login')
         }
       });
     };
+  })
+
+  .controller('NameInfoCtrl', function ($scope, $ionicPopup) {
+    $ionicPopup.alert({
+      title:'系统提示',
+      template: 'Hello!'
+    });
   })
 
   .controller('LoginCtrl', function ($scope,$rootScope,$ionicPopup,$state,$http) {
@@ -66,7 +71,7 @@ angular.module('ctrl.account', [])
         });
       }
       else if(account == 'admin' && password == 'admin'){
-        $state.go('tab.dash');
+        $state.go('tab.account.grid');
       }
       else{
         $ionicPopup.alert({
