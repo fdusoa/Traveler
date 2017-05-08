@@ -8,8 +8,6 @@ angular.module('ctrl.map', [])
     var lngCurrent;
     $scope.loadMap = function() {
 
-
-
       var map = new BMap.Map("allmap");
 ///获取定位
       var geolocation = new BMap.Geolocation();

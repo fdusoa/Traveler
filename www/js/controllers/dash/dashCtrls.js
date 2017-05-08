@@ -24,4 +24,7 @@ angular.module('ctrl.dash', ['ngSanitize'])
     $scope.trustSrc = function() {
       return $sce.trustAsResourceUrl($scope.pano.url);
     };
+    $scope.goThere = function () {
+      location.href = "http://api.map.baidu.com/direction?origin=绍兴&destination=北京&mode=driving&region=绍兴&output=html";
+    }
   });
