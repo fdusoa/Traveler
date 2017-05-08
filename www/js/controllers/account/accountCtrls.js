@@ -56,12 +56,43 @@ angular.module('ctrl.account', [])
       });
     };
   })
-  .controller('LoginCtrl', function ($scope) {
-    // $scope.user = {account:"jindiwei", password:"123456"}
-
-    $scope.checkLogin = function () {
-      $scope.show = $scope.account + ' ' + $scope.password;
-
+  .controller('LoginCtrl', function ($scope,$ionicPopup,$state,$http) {
+    $scope.checkLogin = function (account, password) {
+      if(account == '' || account == null || password == '' || password == null){
+        $ionicPopup.alert({
+          title:'系统提示',
+          template: '用户名和密码不能为空!'
+        });
+      }
+      else if(account == 'admin' && password == 'admin'){
+        $ionicPopup.alert({
+          title: '系统提示',
+          template: '登录成功'
+        });
+      }
+      else{
+        $ionicPopup.alert({
+          title: '系统提示',
+          template: '登录失败,密码错误'
+        });
+      }
+      // $http.get("")
+      //   .success(function (response) {
+      //
+      //   })
+      //   .error(function () {
+      //
+      //   })
     }
   })
-;
+  .controller('RegisterCtrl', function ($scope, $ionicPopup, $state, $http) {
+  $scope.checkRegister = function (account, password_1, password_2) {
+    // $http.get("")
+    //   .success(function (response) {
+    //
+    //   })
+    //   .error(function () {
+    //
+    //   })
+  }
+  });

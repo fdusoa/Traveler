@@ -101,6 +101,17 @@ angular.module('starter.routers', ['routers.account', 'routers.note','routers.da
           }
         }
       })
+
+      .state("tab.register", {
+        url: "/register",
+        views: {
+          'tab-account': {
+            templateUrl: 'templates/account/account-register.html',
+            controller: 'RegisterCtrl'
+          }
+        }
+      })
+
     ;
 
     // if none of the above states are matched, use this as the fallback
