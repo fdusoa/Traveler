@@ -1,4 +1,7 @@
-angular.module('starter.services', ['service.myPhotos','service.myBlogs','service.Trends'])
+angular.module('starter.services',
+  ['service.myPhotos', 'service.myBlogs',
+    'service.Trends','service.scene',
+  'service.user', 'service.url'])
 
   .factory('Notes', function() {
     // Might use a resource here that returns a JSON array
@@ -53,35 +56,4 @@ angular.module('starter.services', ['service.myPhotos','service.myBlogs','servic
         return null;
       }
     };
-  })
-  .factory('User', function() {
-    // Might use a resource here that returns a JSON array
-
-    // Some fake testing data
-    var users = [
-      {
-        username: "duocai",
-        password: "123456"
-      }
-    ];
-
-    return {
-      login: function(ume, pwd) {
-        for (var i = 0; i < users.length; i++) {
-          var user = users[i];
-          if (ume == user.password && pwd == user.password)
-            return true;
-        }
-        return false;
-      },
-
-      register: function(ume, pwd) {
-        var user = {
-          username: ume,
-          password: pwd
-        };
-        users.push(user);
-      }
-    };
-
   });

@@ -1,5 +1,11 @@
 <ion-view view-title="Trends">
-  <ion-content class="neg-padding-top-10">
+
+  <ion-floating-menu has-footer="true" menu-icon="ion-camera">
+    <ion-floating-item icon="ion-camera" ng-click="showInfo()" text="Capture""></ion-floating-item>
+    <ion-floating-item icon="ion-ios-cloud-upload" text="Upload" ng-click="goSettings()"></ion-floating-item>
+  </ion-floating-menu>
+
+  <ion-content class="background-grey">
     <ion-refresher
       pulling-text="Pull to refresh..."
       on-refresh="doRefresh()">
@@ -23,6 +29,10 @@
 
         </div>
       </ion-item>
+      <!--<div class="item item-divider">Others</div>-->
+      <!--<ion-item ng-repeat="other in others" ng-click="show(other.title)">-->
+        <!--{{other.title}}-->
+      <!--</ion-item>-->
     </ion-list>
   </ion-content>
 </ion-view>

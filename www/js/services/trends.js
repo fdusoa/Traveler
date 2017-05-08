@@ -73,6 +73,18 @@ angular.module('service.Trends', [])
         comments:34
       }
     ];
+
+    var list = [];
+    var baseUrl = "http://www.360vrpano.com/index.php/Project/viewProject/id/";
+    for (var i = 0; i < 1000; i++) {
+      var baseIndex = 5000+i;
+      var url = baseUrl + baseIndex + '.html';
+      list.push({
+        title: baseIndex,
+        url: url
+      });
+    }
+
     return {
       all: function() {
         return trends;
@@ -84,8 +96,11 @@ angular.module('service.Trends', [])
         if(index < trends.length){
           return trends[index];
         }else {
-          return null;
+          return list[index-5000];
         }
+      },
+      others: function () {
+        return list;
       }
     };
   });

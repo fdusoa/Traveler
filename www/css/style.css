@@ -6,6 +6,9 @@
   margin:0;
   font-family:"微软雅黑";
 }
+.background-grey{
+  background: #fafafa;
+}
 body, html
 {
   width: 100%;
@@ -25,6 +28,9 @@ body, html
 }
 .neg-padding-top-10{
   padding-top: -10px;
+}
+.neg-margin-top-10{
+  margin-top: -10px;
 }
 .font-size-small {
   font-size: smaller;

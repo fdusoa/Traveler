@@ -15,7 +15,8 @@ angular.module('starter.routers', ['routers.account', 'routers.note','routers.da
       .state('tab', {
         url: '/tab',
         abstract: true,
-        templateUrl: 'templates/tabs.html'
+        templateUrl: 'templates/tabs.html',
+        controller: 'TabController'
       })
 
       // Each tab has its own nav history stack:

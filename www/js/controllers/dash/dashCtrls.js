@@ -7,6 +7,8 @@ angular.module('ctrl.dash', ['ngSanitize'])
     $ionicSlideBoxDelegate.update();
     $scope.trends = Trends.all();
 
+    $scope.others = Trends.others();
+
     $scope.doRefresh = function() {
       $timeout(function(){
         $scope.$broadcast('scroll.refreshComplete');
@@ -17,7 +19,8 @@ angular.module('ctrl.dash', ['ngSanitize'])
     }
   })
   .controller('PanoramaCtrl', function($scope, $stateParams, $sce, Trends) {
-    $scope.pano = Trends.get($stateParams.panoramaId);
+    var id = $stateParams.panoramaId;
+    $scope.pano = Trends.get(id);
     $scope.trustSrc = function() {
       return $sce.trustAsResourceUrl($scope.pano.url);
     };
