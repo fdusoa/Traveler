@@ -19,6 +19,8 @@ angular.module('routers.account', [])
           }
         }
       })
+
+
       .state("tab.account.blog",{
         url:'/blog',
         views:{

@@ -1,5 +1,6 @@
 /**
  * Created by duocai on 2016/9/6.
+ * 决定渲染哪个页面
  */
 angular.module('starter.routers', ['routers.account', 'routers.note','routers.dash'])
 
@@ -67,6 +68,36 @@ angular.module('starter.routers', ['routers.account', 'routers.note','routers.da
           'tab-account': {
             templateUrl: 'templates/account/tab-account.html',
             controller: 'AccountCtrl'
+          }
+        }
+      })
+
+      .state("tab.info", {
+        url: "/info",
+        views: {
+          'tab-account': {
+            templateUrl: 'templates/account/account-personalInfo.html',
+            controller: 'AccountInfoCtrl'
+          }
+        }
+      })
+
+      .state("tab.name", {
+        url: "/name",
+        views: {
+          'tab-account': {
+            templateUrl: 'templates/account/info-name.html',
+            controller: 'NameInfoCtrl'
+          }
+        }
+      })
+
+      .state("tab.login", {
+        url: "/login",
+        views: {
+          'tab-account': {
+            templateUrl: 'templates/account/account-login.html',
+            controller: 'LoginCtrl'
           }
         }
       })

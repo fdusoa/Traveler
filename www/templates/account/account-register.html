@@ -1,0 +1,23 @@
+<ion-view view-title="注册">
+  <ion-content>
+    <div class="list">
+      <form name="loginForm" novalidate>
+        <label class="item item-input">
+          <span class="input-label">用户名</span>
+          <input type="text" required ng-model="account">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">密码</span>
+          <input type="password" required ng-model="password">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">再次输入密码</span>
+          <input type="password" required ng-model="password">
+        </label>
+        <button type="submit" class="button button-block button-positive" ng-click="checkLogin">
+          注册
+        </button>
+      </form>
+    </div>
+  </ion-content>
+</ion-view>

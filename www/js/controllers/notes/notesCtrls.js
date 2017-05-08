@@ -22,9 +22,11 @@ angular.module('ctrl.notes', [])
     $scope.getPromote = function() {
       $scope.notes = Notes.all();
     };
+
     $scope.getAll = function() {
       $scope.notes = Notes.promote();
     };
+
     $scope.newNote = function() {
       alert('new note');
     };

@@ -42,8 +42,8 @@ angular.module('service.Trends', [])
         comments: 25
       },
       {
-        title: '五龙山石夫人',
-        url: 'http://www.360vrpano.com/index.php/Project/viewProject/id/8647.html',
+        title: '凤凰广场',
+        url: 'http://www.360vrpano.com/index.php/Project/viewProject/id/5447.html',
         images:[
           {
             path:'img/photos/pic8.jpg'

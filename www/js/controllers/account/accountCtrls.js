@@ -38,7 +38,30 @@ angular.module('ctrl.account', [])
   .controller( 'AccountFavoritesCtrl', function ($scope) {
     $scope.test="Favorites";
   })
-  .controller('BlogDetailCtrl',function ($scope,$stateParams,MyBlogs) {
+  .controller('BlogDetailCtrl', function ($scope,$stateParams,MyBlogs) {
     $scope.blog = MyBlogs.get($stateParams.blogId);
+  })
+  .controller('AccountInfoCtrl', function ($scope, $ionicPopup) {
+    $scope.showConfirm = function() {
+      var confirmPopup = $ionicPopup.confirm({
+        title: '退出后不会删除任何历史数据,下次登录依然可以使用本账号。',
+        template: '你确定要退出登录吗?'
+      });
+      confirmPopup.then(function(res) {
+        if(res) {
+          console.log('You are sure');
+        } else {
+          console.log('You are not sure');
+        }
+      });
+    };
+  })
+  .controller('LoginCtrl', function ($scope) {
+    // $scope.user = {account:"jindiwei", password:"123456"}
+
+    $scope.checkLogin = function () {
+      $scope.show = $scope.account + ' ' + $scope.password;
+
+    }
   })
 ;
