@@ -5,16 +5,9 @@
 angular.module('service.user', [])
 
 
-  .factory('User', function(Url, $q) {
+  .factory('User', function(Url, $q, $http) {
 
-
-    var soap = require('soap');
     var url = Url.userServiceUrl();
-    var args = {
-      username: 'admin2',
-      password: 'admin2'
-    };
-
 
     return {
       /**
@@ -23,16 +16,14 @@ angular.module('service.user', [])
        */
       login: function (user) {
         var deferred = $q.defer();
-        soap.createClient(url, function(err, client) {
-          if (err !== null) {
-            deferred.reject(err);
-            return ;
-          }
+        $http.get("http://120.76.125.35/axis2/services/UserService" +
+          "/login?username=admin&password=admin").success(function (result) {
+          alert(result);
+        });
+        // in global scope:
+        tinysoap.createClient(url, function(err, client) {
           client.login(user, function (err, result) {
-            if (err !== null)
-              deferred.reject(err);
-            else
-              deferred.resolve(result.return.loginResponse);
+            alert(result);
           })
         });
         return deferred.promise;

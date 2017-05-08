@@ -62,7 +62,9 @@ angular.module('ctrl.account', [])
       username: "",
       password: ""
     };
-    $scope.checkLogin = function (account, password) {
+    $scope.checkLogin = function () {
+      var account = $scope.user.username;
+      var password = $scope.user.password;
       if(account === '' || account === null || password === '' || password === null){
         $ionicPopup.alert({
           title:'系统提示',
@@ -70,16 +72,18 @@ angular.module('ctrl.account', [])
         });
       }
       else {
-        User.login({})
-      }
-      if(account === 'admin' && password === 'admin'){
-        $state.go('tab.dash');
-      }
-      else{
-        $ionicPopup.alert({
-          title: '系统提示',
-          template: '登录失败,密码错误'
+        User.login($scope.user).then(function () {
+          $ionicPopup.alert({
+            title:'系统提示',
+            template: 'chen'
+          });
+        }, function () {
+          $ionicPopup.alert({
+            title:'系统提示',
+            template: 'shibai!'
+          });
         });
+
       }
     }
   })
