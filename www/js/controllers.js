@@ -2,7 +2,7 @@ angular.module('starter.controllers', ['ctrl.notes','ctrl.account','ctrl.camera'
   'ctrl.map'])
   .controller('TabController', function($scope, $ionicPopover) {
 
-    $.scope.openCamera = function () {
+    $scope.openCamera = function () {
 
     };
   });
