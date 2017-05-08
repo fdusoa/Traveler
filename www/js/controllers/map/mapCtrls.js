@@ -8,8 +8,11 @@ angular.module('ctrl.map', [])
     var lngCurrent;
     $scope.loadMap = function() {
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 2accbe8354ac33bfc5b6ec19e9a7f6e23f5c1acc
       var map = new BMap.Map("allmap");
 ///获取定位
       var geolocation = new BMap.Geolocation();
@@ -72,7 +75,10 @@ angular.module('ctrl.map', [])
         renderOptions:{map: map}
       });
       local.search("景点");
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2accbe8354ac33bfc5b6ec19e9a7f6e23f5c1acc
     };
 
     $scope.refreshMap = function() {
