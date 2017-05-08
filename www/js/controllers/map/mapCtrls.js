@@ -3,11 +3,32 @@
  */
 angular.module('ctrl.map', [])
 
-  .controller('MapCtrl', function($scope,$timeout) {
+  .controller('MapCtrl', function($scope,$timeout,$ionicPopup) {
+    var latCurrent;
+    var lngCurrent;
     $scope.loadMap = function() {
-      // 百度地图API功能
-      var map = new BMap.Map("allmap");  // 创建Map实例
-      map.centerAndZoom("上海",15);      // 初始化地图,用城市名设置地图中心点
+
+
+
+      var map = new BMap.Map("allmap");
+///获取定位
+      var geolocation = new BMap.Geolocation();
+      geolocation.getCurrentPosition(function(r){
+        if(this.getStatus() == BMAP_STATUS_SUCCESS){
+          var mk = new BMap.Marker(r.point);
+          map.addOverlay(mk);
+          map.panTo(r.point);
+          // alert('您的位置：'+r.point.lng+','+r.point.lat);
+          latCurrent = parseFloat(r.point.lat);
+          lngCurrent = parseFloat(r.point.lng);
+          // alert('您的位置是' + latCurrent + ',' + lngCurrent);
+        }
+        else {
+          alert('failed'+this.getStatus());
+        }
+      },{enableHighAccuracy: true})
+
+////
       // 添加定位控件
       var geolocationControl = new BMap.GeolocationControl();
       geolocationControl.addEventListener("locationSuccess", function(e){
@@ -18,12 +39,40 @@ angular.module('ctrl.map', [])
         address += e.addressComponent.district;
         address += e.addressComponent.street;
         address += e.addressComponent.streetNumber;
+        alert("当前定位地址为：" + address);
+        // alert(e.addressComponent.lat + "!!!!!!");
       });
       geolocationControl.addEventListener("locationError",function(e){
         // 定位失败事件
         alert(e.message);
       });
       map.addControl(geolocationControl);
+      ////
+      var point = new BMap.Point(latCurrent,lngCurrent);
+      map.centerAndZoom(point, 16);
+      map.enableScrollWheelZoom();
+
+
+
+
+      //////
+      // 添加带有定位的导航控件
+      var navigationControl = new BMap.NavigationControl({
+        // 靠左上角位置
+        anchor: BMAP_ANCHOR_TOP_LEFT,
+        // LARGE类型
+        type: BMAP_NAVIGATION_CONTROL_LARGE,
+        // 启用显示定位
+        enableGeolocation: true
+      });
+      map.addControl(navigationControl);
+
+
+      var local = new BMap.LocalSearch(map, {
+        renderOptions:{map: map}
+      });
+      local.search("景点");
+
     };
 
     $scope.refreshMap = function() {
@@ -33,6 +82,17 @@ angular.module('ctrl.map', [])
       },1000)
     };
 
+    $scope.go = function (end_pos) {
+      if(end_pos == null || end_pos == '') {
+        $ionicPopup.alert({
+          title: '系统提示',
+          template: '请输入终点！'
+        });
+      }
+      else {
+        location.href = "http://api.map.baidu.com/direction?origin=" + latCurrent + "," + lngCurrent + "&destination=" + end_pos + "&mode=driving&region=绍兴&output=html";
+      }
+    }
     $scope.loadMap();
 
     //全景图展示

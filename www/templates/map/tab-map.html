@@ -1,6 +1,19 @@
 <ion-view view-title="Map">
   <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=pSY6ZqLs3gFaTmt02WU5GTWG"></script>
   <ion-content>
+    <div>
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="text" placeholder="请输入终点" ng-model="end_pos">
+        </label>
+        <button class="button button-small" ng-click="go(end_pos)">
+          搜索
+        </button>
+      </div>
+
+    </div>
+
     <ion-refresher
       pulling-text="Pull to refresh..."
       on-refresh="refreshMap()">
