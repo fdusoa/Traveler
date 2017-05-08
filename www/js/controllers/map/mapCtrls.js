@@ -72,7 +72,6 @@ angular.module('ctrl.map', [])
         renderOptions:{map: map}
       });
       local.search("景点");
-
     };
 
     $scope.refreshMap = function() {
