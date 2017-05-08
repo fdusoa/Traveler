@@ -56,6 +56,7 @@ angular.module('ctrl.account', [])
       });
     };
   })
+
   .controller('LoginCtrl', function ($scope,$rootScope,$ionicPopup,$state,$http) {
     $scope.checkLogin = function (account, password) {
       if(account == '' || account == null || password == '' || password == null){
