@@ -1,0 +1,32 @@
+<ion-view view-title="注册">
+  <ion-content>
+    <div class="list">
+
+      <label class="item item-input item-floating-label">
+        <span class="input-label">用户名:</span>
+        <input type="text" placeholder="请输入用户名" ng-model="account">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">密码:</span>
+        <input type="password" placeholder="请输入密码" ng-model="password_1">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">
+          确认密码:
+          <span ng-show="password_1!=password_2" class="color-red">
+            (密码输入不一致!)
+          </span>
+        </span>
+        <input type="password" placeholder="请再次输入密码" ng-model="password_2">
+      </label>
+
+      <button class="button button-block button-calm" ng-click="checkRegister(account, password_1, password_2)" ng-show="account!=''&&account!=null&&password_1!=''&&password_1!=null&&password_2!=''&&password_2!=null&&password_1==password_2">
+        注册
+      </button>
+      <button disabled class="button button-block button-calm" ng-show="account==''||account==null||password_1==''||password_1==null||password_2==''||password_1==null||password_1!=password_2">
+        注册
+      </button>
+    </div>
+
+  </ion-content>
+</ion-view>
