@@ -126,6 +126,6 @@ angular.module('starter.routers', ['routers.account', 'routers.note','routers.da
     ;
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/tab/dash');
 
   });
