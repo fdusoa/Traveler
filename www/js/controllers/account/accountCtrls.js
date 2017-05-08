@@ -56,7 +56,7 @@ angular.module('ctrl.account', [])
       });
     };
   })
-  .controller('LoginCtrl', function ($scope,$ionicPopup,$state,$http) {
+  .controller('LoginCtrl', function ($scope,$rootScope,$ionicPopup,$state,$http) {
     $scope.checkLogin = function (account, password) {
       if(account == '' || account == null || password == '' || password == null){
         $ionicPopup.alert({
@@ -65,10 +65,7 @@ angular.module('ctrl.account', [])
         });
       }
       else if(account == 'admin' && password == 'admin'){
-        $ionicPopup.alert({
-          title: '系统提示',
-          template: '登录成功'
-        });
+        $state.go('tab.dash');
       }
       else{
         $ionicPopup.alert({
