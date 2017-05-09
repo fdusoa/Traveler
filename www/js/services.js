@@ -1,7 +1,7 @@
 angular.module('starter.services',
   ['service.myPhotos', 'service.myBlogs',
     'service.Trends','service.scene',
-  'service.user', 'service.url'])
+  'service.user', "service.webview"])
 
   .factory('Notes', function() {
     // Might use a resource here that returns a JSON array

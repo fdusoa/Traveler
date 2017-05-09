@@ -2,7 +2,9 @@
  * Created by duocai on 2016/9/6.
  * 决定渲染哪个页面
  */
-angular.module('starter.routers', ['routers.account', 'routers.note','routers.dash'])
+angular.module('starter.routers', ['routers.account',
+  'routers.note','routers.dash',
+  'routers.map'])
 
   .config(function($stateProvider, $urlRouterProvider) {
 
@@ -11,16 +13,6 @@ angular.module('starter.routers', ['routers.account', 'routers.note','routers.da
     // Set up the various states which the app can be in.
     // Each state's controller can be found in controllers.js
     $stateProvider
-
-      .state('login', {
-        url: "/login",
-        views: {
-          'initial': {
-            templateUrl: 'templates/account/account-login.html',
-            controller: 'LoginCtrl'
-          }
-        }
-      })
 
       // setup an abstract state for the tabs directive
       .state('tab', {

@@ -20,7 +20,7 @@
         <input type="password" placeholder="请再次输入密码" ng-model="password_2">
       </label>
 
-      <button class="button button-block button-calm" ng-click="checkRegister(account, password_1, password_2)" ng-show="account!=''&&account!=null&&password_1!=''&&password_1!=null&&password_2!=''&&password_2!=null&&password_1==password_2">
+      <button class="button button-block button-calm" ng-click="checkRegister(account, password_1)" ng-show="account!=''&&account!=null&&password_1!=''&&password_1!=null&&password_2!=''&&password_2!=null&&password_1==password_2">
         注册
       </button>
       <button disabled class="button button-block button-calm" ng-show="account==''||account==null||password_1==''||password_1==null||password_2==''||password_1==null||password_1!=password_2">

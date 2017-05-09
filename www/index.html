@@ -18,9 +18,6 @@
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
-    <!--soap lib-->
-    <script src="lib/tinysoap/tinysoap-browser-min.js"></script>
-    <script src="lib/jquery.min.js"></script>
 
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=FjIV2isch3350pbRlZ7mY7AA4df0vIg8"></script>
 
@@ -41,16 +38,17 @@
     <script src="js/routers/account/account_routers.js"></script>
     <script src="js/routers/notes/note_routers.js"></script>
     <script src="js/routers/dash/dash_routers.js"></script>
+    <script src="js/routers/map/map.routers.js"></script>
 
     <!--services-->
     <script src="js/services/myPhotos.js"></script>
     <script src="js/services/myBlogs.js"></script>
     <script src="js/services/trends.js"></script>
-    <script src="js/services/url.service.js"></script>
     <script src="js/services/user.service.js"></script>
     <script src="js/services/scene.service.js"></script>
+    <script src="js/services/webview.service.js"></script>
   </head>
-  <body ng-app="starter">
+  <body ng-app="starter" class="platform-android platform-cordova platform-webview">
     <!--
       The nav bar that will be updated as we navigate between views.
     -->

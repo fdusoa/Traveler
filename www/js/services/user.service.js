@@ -1,4 +1,4 @@
-<<<<<<< Updated upstream
+
 /**
  * Created by duocai on 2017/5/8.
  */
@@ -6,9 +6,14 @@
 angular.module('service.user', [])
 
 
-  .factory('User', function(Url, $q, $http) {
+  .factory('User', function($q) {
+    var plugin = {
+      name: "UserPlugin",
+      login: "login",
+      register: "register"
+    };
 
-    var url = Url.userServiceUrl();
+    var logined = false;
 
     return {
       /**
@@ -17,31 +22,40 @@ angular.module('service.user', [])
        */
       login: function (user) {
         var deferred = $q.defer();
-        $http.get("http://120.76.125.35/axis2/services/UserService" +
-          "/login?username=admin&password=admin").success(function (result) {
-          alert(result);
-        });
-        // in global scope:
-        tinysoap.createClient(url, function(err, client) {
-          client.login(user, function (err, result) {
-            alert(result);
-          })
-        });
+        var sucess = function () {
+          logined = true;
+          deferred.resolve(1);
+        };
+        var fail = function () {
+          deferred.reject(0);
+        };
+        cordova.exec(sucess, fail, plugin.name, plugin.login, [user.username, user.password]);
         return deferred.promise;
+      },
+      /**
+       *
+       * @param user '{username: "", password: ""}'
+       */
+      register: function (user) {
+        var deferred = $q.defer();
+        var sucess = function () {
+          logined = true;
+          deferred.resolve(1);
+        };
+        var fail = function () {
+          deferred.reject(0);
+        };
+        cordova.exec(sucess, fail, plugin.name, plugin.register, [user.username, user.password]);
+        return deferred.promise;
+      },
+
+      isLogin: function () {
+        return logined;
+      },
+
+      setLogin: function () {
+        logined = true;
       }
     }
 
   });
-=======
-/**
- * Created by duocai on 2017/5/8.
- */
-
-angular.module('service.user', [])
-
-
-  .factory('User', function(Url) {
-
-
-  });
->>>>>>> Stashed changes

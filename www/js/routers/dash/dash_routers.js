@@ -20,5 +20,14 @@ angular.module('routers.dash', [])
           }
         }
       })
+      .state("tab.dash-webview", {
+        url: "/dash-webview",
+        views: {
+          'tab-dash': {
+            templateUrl: 'templates/dash/webview.html',
+            controller: 'DashWebviewCtrl'
+          }
+        }
+      })
     ;
   });

@@ -3,18 +3,13 @@
  */
 angular.module('ctrl.map', [])
 
-  .controller('MapCtrl', function($scope,$timeout,$ionicPopup) {
+  .controller('MapCtrl', function($scope,$timeout,$ionicPopup,Webview,$state) {
     var latCurrent;
     var lngCurrent;
     $scope.loadMap = function() {
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 2accbe8354ac33bfc5b6ec19e9a7f6e23f5c1acc
       var map = new BMap.Map("allmap");
-///获取定位
+      ///获取定位
       var geolocation = new BMap.Geolocation();
       geolocation.getCurrentPosition(function(r){
         if(this.getStatus() == BMAP_STATUS_SUCCESS){
@@ -75,10 +70,6 @@ angular.module('ctrl.map', [])
         renderOptions:{map: map}
       });
       local.search("景点");
-<<<<<<< HEAD
-
-=======
->>>>>>> 2accbe8354ac33bfc5b6ec19e9a7f6e23f5c1acc
     };
 
     $scope.refreshMap = function() {
@@ -96,9 +87,11 @@ angular.module('ctrl.map', [])
         });
       }
       else {
-        location.href = "http://api.map.baidu.com/direction?origin=" + latCurrent + "," + lngCurrent + "&destination=" + end_pos + "&mode=driving&region=绍兴&output=html";
+        var url = "http://api.map.baidu.com/direction?origin=" + latCurrent + "," + lngCurrent + "&destination=" + end_pos + "&mode=driving&region=绍兴&output=html";
+        Webview.setView(url);
+        $state.go("tab.map-webview");
       }
-    }
+    };
     $scope.loadMap();
 
     //全景图展示
@@ -129,4 +122,7 @@ angular.module('ctrl.map', [])
     //    panorama.setPosition(e.point); //拖动marker后，全景图位置也随着改变
     //    panorama.setPov({heading: -40, pitch: 6});}
     //);
+  })
+  .controller('MapWebviewCtrl', function($scope, $sce, Webview) {
+    $scope.trustSrc = $sce.trustAsResourceUrl(Webview.getView());
   });
